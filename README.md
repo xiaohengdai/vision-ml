@@ -93,11 +93,11 @@ curl  http://localhost:9092/client/vision  -F "file=@${IMAGE_PATH}.png"
 
 Button image named 1_1.png:
 
-![](image/1_1.png)
+![](old_image/1_1.png)
 
 Background image named 0_3.png:
 
-![](image/0_3.png)
+![](old_image/0_3.png)
 
 1. There are some images in this repo for training.
 

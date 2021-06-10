@@ -1,16 +1,18 @@
-import keras
+from tensorflow import keras
 import os
 import numpy as np
 from all_config import *
 from image_utils.image_utils import *
-from keras.models import Sequential
-from keras.layers import Dense, Dropout, Flatten
-from keras.layers import Conv2D, MaxPooling2D
-from keras import backend as K
-from keras.preprocessing.image import ImageDataGenerator
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Dense, Dropout, Flatten
+from tensorflow.keras.layers import Conv2D, MaxPooling2D
+# from tensorflow.keras import backend as K
+from tensorflow.keras import backend as K
+# from tensorflow.keras import initializers
+from tensorflow.keras.preprocessing.image import ImageDataGenerator
 from sklearn.model_selection import train_test_split
 import matplotlib.pyplot as plt
-from keras import regularizers
+from tensorflow.keras import regularizers
 
 
 # input image dimensions
@@ -143,8 +145,9 @@ def train_model():
     print('Test loss:', score[0])
     print('Test accuracy:', score[1])
     # history for accuracy
-    plt.plot(history.history['acc'])
-    plt.plot(history.history['val_acc'])
+    print("history.history:",history.history)
+    plt.plot(history.history['accuracy'])
+    plt.plot(history.history['val_accuracy'])
     plt.title('model accuracy')
     plt.ylabel('accuracy')
     plt.xlabel('epoch')

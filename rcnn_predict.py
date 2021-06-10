@@ -1,11 +1,14 @@
 import selectivesearch.selectivesearch
 from all_config import *
 from image_utils.image_utils import *
-from keras.models import load_model
+from tensorflow.keras.models import load_model
 import os
 
 
 img_rows, img_cols = IMG_ROW, IMG_COL
+current_dir=os.getcwd()
+
+print("model_name:",model_name)
 model = load_model(model_name)
 model._make_predict_function()
 
